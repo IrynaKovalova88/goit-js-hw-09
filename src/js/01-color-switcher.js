@@ -11,11 +11,13 @@ refs.stopButton.addEventListener('click', onColorStop);
 function onColorStart() {
     colorId = setInterval(bodyColor, 1000);
     refs.startButton.disabled = true;
+    refs.stopButton.disabled = false;
  };
 
 function onColorStop() {
     clearInterval(colorId);
     refs.startButton.disabled = false;
+    refs.stopButton.disabled = true;
 };
  
 function bodyColor() {
