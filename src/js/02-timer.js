@@ -44,6 +44,7 @@ function onStartClick() {
         if (deltaTime < 1000) {
             clearInterval(timerId);
             refs.input.disabled = false;
+            Notiflix.Notify.success('🥳Congratulations!!!');
         }
         updateTime(time);
     }, 1000);
