@@ -10,9 +10,8 @@ const refs = {
 refs.form.addEventListener('submit', onForm);
 
 function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-
   return new Promise((resolve, reject) => {
+    const shouldResolve = Math.random() > 0.3;
     if (shouldResolve) {
       resolve({ position, delay });
     } else {
@@ -23,9 +22,9 @@ function createPromise(position, delay) {
 
 function onForm(e) {
   e.preventDefault();
-  let delay = refs.delay.value;
-  let step = refs.step.value;
-  let amount = refs.amount.value;
+  let delay = Number(refs.delay.value);
+  let step = Number(refs.step.value);
+  let amount = Number(refs.amount.value);
   for (let i = 1; i <= amount; i += 1) {
     createPromise(i, delay)
       .then(({ position, delay }) => {
